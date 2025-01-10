@@ -104,7 +104,6 @@ router.put("/update", authenticateToken, async (req, res) => {
 });
 
 //Get all users
-
 router.get("/bulk", async (req, res) => {
   const filter = req.query.filter || "";
 

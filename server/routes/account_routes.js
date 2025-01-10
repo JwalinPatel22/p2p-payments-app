@@ -6,7 +6,7 @@ const router = express.Router();
 const zod = require("zod");
 
 //get balance
-router.get("/balance", authenticateToken, async (req, res) => {
+router.get("/balance/:id", authenticateToken, async (req, res) => {
   const account = await Account.findOne({ userId: req.userId });
   res.json({ balance: account.balance });
 });
@@ -37,5 +37,7 @@ router.post("/transfer", authenticateToken, async (req, res) => {
   await session.commitTransaction();
   res.json({ msg: "Transaction Successful" });
 });
+
+
 
 module.exports = router;
