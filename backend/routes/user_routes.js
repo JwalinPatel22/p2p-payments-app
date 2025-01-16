@@ -70,7 +70,10 @@ router.post("/signin", async (req, res) => {
       password: password,
     });
     if (isUser) {
-      const token = jwt.sign({ userId: isUser._id }, process.env.JWT_SECRET);
+      const token = jwt.sign(
+        { userId: isUser._id, firstName: isUser.firstName },
+        process.env.JWT_SECRET
+      );
       res.set("Authorization", `Bearer ${token}`);
       res.json({ token: token });
     } else {

@@ -1,0 +1,18 @@
+POST http://localhost:3001/paytm/v1/user/signup
+Content-Type: application/json
+
+{
+    "username" : "test2@gmail.com",
+    "password" : "asdf1234",
+    "firstName" : "test",
+    "lastName" : "user 2"
+}
+
+###
+POST http://localhost:3001/paytm/v1/user/signin
+Content-Type: application/json
+
+{
+    "username" : "test2@gmail.com",
+    "password" : "asdf1234"
+}
